@@ -12,7 +12,7 @@ public class TipoProducto {
 	@Id
 	private Long id;
 	
-	@Column(name = "titulo")
+	@Column(name = "descripcion")
 	private String descripcion;
 
 	//alt+shift+s

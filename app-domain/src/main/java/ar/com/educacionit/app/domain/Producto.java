@@ -30,6 +30,10 @@ public class Producto {
 	@JoinColumn(name = "tipo_producto", referencedColumnName = "id")
 	private TipoProducto tipoProducto;
 
+	public Producto() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Producto(Long id, String titulo, Float precio, String codigo, TipoProducto tipoProducto) {
 		super();
 		this.id = id;
@@ -86,5 +90,12 @@ public class Producto {
 	public void setTipoProducto(TipoProducto tipoProducto) {
 		this.tipoProducto = tipoProducto;
 	}
+
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", titulo=" + titulo + ", precio=" + precio + ", codigo=" + codigo
+				+ ", tipoProducto=" + tipoProducto + "]";
+	}
+	
 	
 }
