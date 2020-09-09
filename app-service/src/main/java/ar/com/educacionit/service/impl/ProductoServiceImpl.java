@@ -5,6 +5,7 @@ import java.util.List;
 import ar.com.educacionit.app.domain.Producto;
 import ar.com.educacionit.app.domain.TipoProducto;
 import ar.com.educacionit.dao.ProductoRepository;
+import ar.com.educacionit.dao.exceptions.DuplicateException;
 import ar.com.educacionit.dao.exceptions.GenericExeption;
 import ar.com.educacionit.dao.hibernate.impl.ProductoRepositoryHibernateImpl;
 import ar.com.educacionit.service.ProductoService;
@@ -36,8 +37,13 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	public Producto createProducto(Producto producto) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return this.productoRepository.createProducto(producto);
+		} catch (DuplicateException e) {
+			throw new ServiceException("Producto Duplicado: ",e);
+		} catch (GenericExeption e) {
+			throw new ServiceException("No se pudo crear el producto",e);
+		}
 	}
 
 	@Override
