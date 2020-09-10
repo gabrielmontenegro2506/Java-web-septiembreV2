@@ -21,8 +21,12 @@ public class ProductoServiceImpl implements ProductoService {
 
 	@Override
 	public Producto getProducto(String codigo) throws ServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			return this.productoRepository.getProducto(codigo);
+		} catch (GenericExeption e) {
+			e.printStackTrace();
+			throw new ServiceException("No se ha podido obtener el producto con codigo="+ codigo, e);
+		}
 	}
 
 	@Override
