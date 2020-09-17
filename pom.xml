@@ -21,8 +21,8 @@
 	    <module>app-service</module>
 	    <module>app-ws-soap-server</module>
 	    <module>app-ws-soap-client</module>
-    <module>app-ws-rest-server</module>
-    <module>app-ws-rest-client</module>
-    <module>jsf-webapp</module>
+	    <module>app-ws-rest-server</module>
+	    <module>app-ws-rest-client</module>
+	    <module>jsf-webapp</module>
   </modules>
 </project>
